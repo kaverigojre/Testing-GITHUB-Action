@@ -1,0 +1,18 @@
+name: Deploy to EC2
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print my name
+              run: | 
+                  echo "Kaveri"
+                  echo "GitHub"
+
+            - name: Current folder
+              run: |
+                  pwd
