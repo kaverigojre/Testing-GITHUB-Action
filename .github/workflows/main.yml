@@ -4,16 +4,17 @@ on:
         branches:
             - main
 
-    pull_request:
-        branches:
-            - main
-    schedule: 
-        - cron: '0 0 * * *' 
-    release: 
-        types:
-            - published
-            - created
-            - prereleased
+    #pull_request:
+      #  branches:
+      #      - main
+   # schedule: 
+   #     - cron: '0 0 * * *' 
+   # release: 
+      #  types:
+       #     - published
+        #    - created
+         #   - prereleased 
+       
           
 jobs:
     deploy:
