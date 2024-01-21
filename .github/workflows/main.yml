@@ -20,11 +20,34 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Print my name
-              run: | 
-                  echo "Kaveri"
-                  echo "GitHub"
+            - name: Checking out code on Runner
+                users:action/checkout@v4
 
-            - name: Current folder
-              run: |
-                  pwd
+            - name: login and update the EC2 instance
+                uses:appleboy/ssh-action@v1.0.3
+                    with:
+                        host: ${{ secrets.HOST }}
+                        username: ${{ secrets.USERNAME }}
+                        password: ${{ secrets.PASSWORD }}
+                        port: 22
+                        script: |
+                            whoami
+                            sudo apt-get update -y
+
+
+
+
+
+
+
+                
+            #- name: Print my name
+            #  run: | 
+             #     echo "Kaveri"
+               #   echo "GitHub"
+
+         #   - name: Current folder
+           #   run: |
+              #    pwd
+
+        
